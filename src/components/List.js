@@ -64,7 +64,7 @@ const List = () => {
     }, 1000);
 
     return () => clearInterval(id);
-  }, [order, data, startDate, endDate]);
+  }, [order, data, startDate, endDate, filter]);
 
   const handleDragEnd = (result) => {
     if (!result.destination) return;
