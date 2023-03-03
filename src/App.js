@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+
+import Navbar from "./components/Navbar";
+import VisualData from "./components/VisualData";
+import List from "./components/List";
+import Modal from "./components/Modal";
+
+import todo_context from "./components/context/AppContext";
 
 function App() {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalContent, setModalContent] = useState("");
+  const [edit, setEdit] = useState(false);
+  const [editNote, setEditNote] = useState({
+    note_id: "",
+    note_content: "",
+    created_on: "",
+    checked: false,
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <todo_context.Provider
+      value={{
+        modalVisible,
+        setModalVisible,
+        modalContent,
+        setModalContent,
+        edit,
+        setEdit,
+        editNote,
+        setEditNote,
+      }}
+    >
+      {modalVisible && <Modal />}
+
+      <Navbar />
+      <VisualData />
+      <List />
+    </todo_context.Provider>
   );
 }
 

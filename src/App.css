@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+:root {
+  --accent-color: #ff3366;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style-type: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.visual-data {
+  margin: 2rem;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.list {
+  margin: 2rem;
+  padding: 4rem;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.list-head button {
+  padding: 0.75rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.list-head button:hover {
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.list-filter button {
+  padding: 0.75rem;
+  color: var(--accent-color);
+  background-color: #fff;
+  font-size: 0.75rem;
+  border-radius: 10px;
+  margin-left: 1rem;
+  border: none;
+  transition: 0.25s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 18px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.list-filter button:hover {
+  cursor: pointer;
+  background-color: var(--accent-color);
+  color: #fff;
+  box-shadow: none;
+}
+
+.todo-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.15rem;
+  border-bottom: 0.01px var(--accent-color) solid;
+}
+
+.todo-list-icons {
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-list-delete:hover {
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.todo-list-edit:hover {
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.todo-list-content {
+  width: 40%;
+  display: flex;
+}
+
+.todo-list-content input {
+  margin-right: 5rem;
+}
+
+.todo-list-content-checked {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.modal {
+  position: fixed;
+  z-index: 22;
+  background-color: #000000a0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-content {
+  width: 50rem;
+  height: 30rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 2rem;
+  top: 0;
+}
+
+.modal-content input {
+  padding: 2rem;
+  width: 80%;
+  font-size: 2rem;
+}
+
+.modal-buttons {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-buttons button {
+  padding: 1rem;
+  width: 8rem;
+  border: 3px var(--accent-color) solid;
+  background-color: #fff;
+  color: var(--accent-color);
+  border-radius: 1rem;
+  font-size: 1rem;
+  transition: 0.5s;
+}
+
+.modal-buttons button:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar {
+  padding: 1rem;
+  padding-left: 5rem;
+  font-size: 3rem;
+}
+
+.list-filter {
+  font-size: 1.5rem;
+  padding: 2rem;
+}
+
+input[type="date"] {
+  background-color: var(--accent-color);
+  padding: 0.5rem;
+  color: #ffffff;
+  font-size: 0.75rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator {
+  background-color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
 }
