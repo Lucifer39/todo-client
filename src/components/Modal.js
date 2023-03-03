@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import todo_context from "./context/AppContext";
 
 const Modal = () => {
-  const { modalVisible, setModalVisible, edit, setEdit, editNote, setEditNote } =
-    useContext(todo_context);
+  const { setModalVisible, edit, setEdit, editNote, setEditNote } = useContext(todo_context);
 
   const handleCancel = () => {
     setModalVisible(false);
