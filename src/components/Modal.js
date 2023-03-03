@@ -31,7 +31,7 @@ const Modal = () => {
         }),
       };
 
-      fetch("/put/updateNote", options);
+      fetch("https://busy-cyan-basket-clam-veil.cyclic.app/put/updateNote", options);
     } else {
       let d = new Date();
       let dFormat =
@@ -54,7 +54,7 @@ const Modal = () => {
         }),
       };
 
-      fetch("/post/uploadNotes", options);
+      fetch("https://busy-cyan-basket-clam-veil.cyclic.app/post/uploadNotes", options);
     }
 
     handleCancel();

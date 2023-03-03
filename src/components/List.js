@@ -13,7 +13,7 @@ const List = () => {
   const { setModalVisible, setEdit, setEditNote } = useContext(todo_context);
 
   useEffect(() => {
-    fetch("/get/todoList")
+    fetch("https://busy-cyan-basket-clam-veil.cyclic.app/get/todoList")
       .then((response) => {
         if (response.status === 200) {
           return response.json();
@@ -23,7 +23,7 @@ const List = () => {
         setData(info);
       });
 
-    fetch("/get/order")
+    fetch("https://busy-cyan-basket-clam-veil.cyclic.app/get/order")
       .then((response) => {
         if (response.status === 200) {
           return response.json();
@@ -37,8 +37,8 @@ const List = () => {
 
   useEffect(() => {
     const urlData = filter
-      ? `/get/todoList?filter=true&startDate=${startDate}&endDate=${endDate}`
-      : "/get/todoList";
+      ? `https://busy-cyan-basket-clam-veil.cyclic.app/get/todoList?filter=true&startDate=${startDate}&endDate=${endDate}`
+      : "https://busy-cyan-basket-clam-veil.cyclic.app/get/todoList";
 
     const id = setInterval(() => {
       fetch(urlData)
@@ -51,7 +51,7 @@ const List = () => {
           setData(info);
         });
 
-      fetch("/get/order")
+      fetch("https://busy-cyan-basket-clam-veil.cyclic.app/get/order")
         .then((response) => {
           if (response.status === 200) {
             return response.json();
@@ -87,7 +87,7 @@ const List = () => {
 
     console.log(options);
 
-    fetch("/put/note_order", options);
+    fetch("https://busy-cyan-basket-clam-veil.cyclic.app/put/note_order", options);
   };
 
   const handleNew = () => {
@@ -116,7 +116,7 @@ const List = () => {
       }),
     };
 
-    fetch("/put/updateNote", options);
+    fetch("https://busy-cyan-basket-clam-veil.cyclic.app/put/updateNote", options);
   };
 
   const handleDelete = (note) => {
@@ -128,7 +128,7 @@ const List = () => {
       },
     };
 
-    fetch(`/delete/deleteNote?note_id=${note}`, options);
+    fetch(`https://busy-cyan-basket-clam-veil.cyclic.app/delete/deleteNote?note_id=${note}`, options);
   };
 
   const handleEdit = (item) => {
@@ -140,7 +140,7 @@ const List = () => {
   };
 
   const handleFilter = () => {
-    fetch(`/get/todoList?filter=true&startDate=${startDate}&endDate=${endDate}`)
+    fetch(`https://busy-cyan-basket-clam-veil.cyclic.app/get/todoList?filter=true&startDate=${startDate}&endDate=${endDate}`)
       .then((response) => {
         if (response.status === 200) {
           return response.json();

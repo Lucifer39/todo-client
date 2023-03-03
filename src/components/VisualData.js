@@ -8,7 +8,7 @@ const VisualData = () => {
   const ref = useRef();
 
   useEffect(() => {
-    fetch("/get/visualData")
+    fetch("https://busy-cyan-basket-clam-veil.cyclic.app/get/visualData")
       .then((response) => {
         if (response.status !== 200) {
         } else {
