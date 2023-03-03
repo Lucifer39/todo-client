@@ -10,13 +10,12 @@ const List = () => {
   const [filter, setFilter] = useState(false);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const { modalVisible, setModalVisible, edit, setEdit, editNote, setEditNote } =
-    useContext(todo_context);
+  const { setModalVisible, setEdit, setEditNote } = useContext(todo_context);
 
   useEffect(() => {
     fetch("/get/todoList")
       .then((response) => {
-        if (response.status == 200) {
+        if (response.status === 200) {
           return response.json();
         }
       })
@@ -26,7 +25,7 @@ const List = () => {
 
     fetch("/get/order")
       .then((response) => {
-        if (response.status == 200) {
+        if (response.status === 200) {
           return response.json();
         }
       })
@@ -44,7 +43,7 @@ const List = () => {
     const id = setInterval(() => {
       fetch(urlData)
         .then((response) => {
-          if (response.status == 200) {
+          if (response.status === 200) {
             return response.json();
           }
         })
@@ -54,7 +53,7 @@ const List = () => {
 
       fetch("/get/order")
         .then((response) => {
-          if (response.status == 200) {
+          if (response.status === 200) {
             return response.json();
           }
         })
@@ -143,7 +142,7 @@ const List = () => {
   const handleFilter = () => {
     fetch(`/get/todoList?filter=true&startDate=${startDate}&endDate=${endDate}`)
       .then((response) => {
-        if (response.status == 200) {
+        if (response.status === 200) {
           return response.json();
         }
       })

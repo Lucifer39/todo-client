@@ -10,7 +10,7 @@ const VisualData = () => {
   useEffect(() => {
     fetch("/get/visualData")
       .then((response) => {
-        if (response.status != 200) {
+        if (response.status !== 200) {
         } else {
           return response.json();
         }
